@@ -2,7 +2,12 @@ import ControlPresupuesto from "./ControlPresupuesto"
 import NuevoPresupuesto from "./NuevoPresupuesto"
 
 function Header(
-  {presupuesto, setPresupuesto, isValidPresupuesto, setIsValidPresupuesto, gastos}
+  {presupuesto, 
+    setGastos, 
+    setPresupuesto, 
+    isValidPresupuesto, 
+    setIsValidPresupuesto, 
+    gastos}
 ) {
   return (
     <header>
@@ -11,7 +16,10 @@ function Header(
         {isValidPresupuesto ? 
           <ControlPresupuesto
             gastos={gastos}
+            setGastos={setGastos}
             presupuesto={presupuesto}
+            setPresupuesto={setPresupuesto}
+            setIsValidPresupuesto={setIsValidPresupuesto}
           />
           :
           <NuevoPresupuesto 
